@@ -1,8 +1,12 @@
+import { Box } from '@mui/material'
 import React from 'react'
+import SearchBar from './components/SearchBar'
 
 const Home = () => {
   return (
-    <div> hello im a Home page  </div>
+    <Box>
+    <SearchBar />
+    </Box>
   )
 }
 
