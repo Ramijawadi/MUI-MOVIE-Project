@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material";
+import { darkShadows, lightShadows } from "./Shadows";
 
 export const lightTheme = createTheme({
   palette: {
@@ -6,8 +7,10 @@ export const lightTheme = createTheme({
     background: {
       header: "#0f171e",
       body: "#ffffff",
+      cardContent:"#ffffffc3",
     },
   },
+  shadows:darkShadows,
 });
 
 export const darkTheme = createTheme({
@@ -16,6 +19,9 @@ export const darkTheme = createTheme({
     background: {
       header: "#0f171e",
       body: "#1a242f",
+      cardContent:"#000000a0",
     },
   },
+
+  shadows : lightShadows,
 });
