@@ -1,8 +1,15 @@
+import { Box } from '@mui/material'
 import React from 'react'
+
+import FoundedMovies from './components/FoundedMovies'
+import SearchBar from './components/SearchBar'
 
 const Home = () => {
   return (
-    <div> hello im a Home page  </div>
+    <Box>
+    <SearchBar />
+    <FoundedMovies/>
+    </Box>
   )
 }
 

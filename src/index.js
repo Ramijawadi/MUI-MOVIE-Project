@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Header from './components/Header';
+
 import MovieInfo from './pages/movie-info/movieInfo';
 import Home from './pages/movie-info/home/Home';
 
@@ -16,7 +16,7 @@ root.render(
         <Route path='/' element={<App />} >
 
           <Route path='/' element={<Home />} />
-          <Route path='/movie' element={<MovieInfo />} />
+          <Route path='/movie/:movieId' element={<MovieInfo />} />
 
         </Route>
       </Routes>
