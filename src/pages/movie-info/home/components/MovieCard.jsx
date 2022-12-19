@@ -29,6 +29,7 @@ const MovieCard = ({ movieObject }) => {
           sx={{
             height: "450px",
             position: "relative",
+            borderRadius: 3,
             ":hover": {
               boxShadow: shadows[5],
             },

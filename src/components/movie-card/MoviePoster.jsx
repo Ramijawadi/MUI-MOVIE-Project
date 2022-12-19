@@ -1,11 +1,12 @@
-import React from 'react'
+import { CardMedia, Card } from "@mui/material";
+import React from "react";
 
-const MoviePoster = () => {
+const MoviePoster = ({ image }) => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <Card>
+      <CardMedia image={image} component="img" />
+    </Card>
+  );
+};
 
-export default MoviePoster
+export default MoviePoster;

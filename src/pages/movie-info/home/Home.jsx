@@ -1,19 +1,16 @@
-import { Box } from '@mui/material'
-import React from 'react'
-import { SearchContextProvider } from '../../../contexts/SearchContext'
+import { Box } from "@mui/material";
+import React from "react";
 
-import FoundedMovies from './components/FoundedMovies'
-import SearchBar from './components/SearchBar'
+import FoundedMovies from "./components/FoundedMovies";
+import SearchBar from "./components/SearchBar";
 
 const Home = () => {
   return (
     <Box>
-      <SearchContextProvider>
-    <SearchBar />
-    <FoundedMovies/>
-    </SearchContextProvider>
+      <SearchBar />
+      <FoundedMovies />
     </Box>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

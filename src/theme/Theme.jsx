@@ -7,10 +7,17 @@ export const lightTheme = createTheme({
     background: {
       header: "#0f171e",
       body: "#ffffff",
-      cardContent:"#ffffffc3",
+      cardContent: "#ffffffc3",
+    },
+
+    primary: {
+      contrastText: "#fff",
+      dark: "#0059B2",
+      light: "#66B2FF",
+      main: "#2196f3",
     },
   },
-  shadows:darkShadows,
+  shadows: darkShadows,
 });
 
 export const darkTheme = createTheme({
@@ -19,9 +26,16 @@ export const darkTheme = createTheme({
     background: {
       header: "#0f171e",
       body: "#1a242f",
-      cardContent:"#000000a0",
+      cardContent: "#000000a0",
+    },
+
+    primary: {
+      contrastText: "#fff",
+      dark: "#0059B2",
+      light: "#66B2FF",
+      main: "#2196f3",
     },
   },
 
-  shadows : lightShadows,
+  shadows: lightShadows,
 });

@@ -1,59 +1,37 @@
-import React , {useState ,useEffect ,useContext} from "react";
+import React, { useEffect, useContext } from "react";
 import { Box, Grid } from "@mui/material";
 // import data from "../../../../data/data.json";
 import MovieCard from "./MovieCard";
 import { SearchContext } from "../../../../contexts/SearchContext";
-import { wait } from "@testing-library/user-event/dist/utils";
 import Loader from "../../../../components/movie-card/Loader";
 import ErrorMessage from "../../../../components/movie-card/ErrorMessage";
-
-
+import useFetch from "../../../../Hooks/useFetch";
 
 const FoundedMovies = () => {
+  const { searchWord, movieList, setMovieList } = useContext(SearchContext);
 
-const {searchWord}= useContext (SearchContext);
-const [movieList , setMovieList]=useState([]);
-const [error , setError] = useState(null);
-const [isLoading , setIsLoading] = useState(false);
-async  function  getMovies  () {
-try{
- setIsLoading(true);
-  setError(null);
-  await wait(2000);
-  const response = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=${process.env.REACT_APP_API_KEY}&s=${searchWord}`);
-  const data = await response.json();
+  const url = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${searchWord}`;
 
-if(data.Response === "True")
-{
-  setMovieList(data.Search);
-  
-}
-else {
- setMovieList([]);
-  setError(data.Error);
-}
-}
-catch (error){
+  const { error, isLoading, performFetch } = useFetch();
+  useEffect(() => {
+    if (searchWord) {
+      performFetch(url).then((data) => {
+        if (data) setMovieList(data.Search);
+      });
+    }
+    // eslint-disable-next-line
+  }, [searchWord]);
 
-  console.log("error happened" , error.message);
-}
-finally {
-  setIsLoading(false);
-}
-}
+  useEffect(() => {
+    if (error) {
+      setMovieList([]);
+    }
+    // eslint-disable-next-line
+  }, [error]);
 
-useEffect(() => {
-  if(searchWord){
- getMovies();
-  }
-  // eslint-disable-next-line 
-}, [searchWord]);
-
-
- 
   return (
-    <Box mt={3}>
-      {error && <ErrorMessage  error={error} />}
+    <Box py={3}>
+      {error && <ErrorMessage error={error} />}
       {isLoading && <Loader />}
       <Grid container spacing={2}>
         {movieList.map((movie, index) => {

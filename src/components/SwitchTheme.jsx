@@ -66,7 +66,7 @@ const switchValue = ()=>{
 
     <FormGroup>
     <FormControlLabel
-      control={<MaterialUISwitch sx={{ m: 1 }} checked={value}  onChange={switchValue} />}
+      control={<MaterialUISwitch sx={{ m: 1 , my: 2}} checked={value}  onChange={switchValue}  />}
     />
       </FormGroup>
 
