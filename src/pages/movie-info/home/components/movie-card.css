@@ -1,0 +1,10 @@
+.movie-content {
+opacity: 0;
+transform:  translateY(100px);
+transition: all 500ms;
+}
+.movie-card:hover .movie-content {
+    opacity: 1;
+    transform:  translateY(0);
+
+}

@@ -5,20 +5,22 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <Box sx={{ backgroundColor: "black", height: "70px" }} component="header">
+    <Box
+    sx={{ backgroundColor: "background.header", height: "70px" }}
+    component="header"
+     >
       <Container sx={{ height: "100%" }}>
         <Grid
           container
           sx={{
             height: "100%",
-
             justifyContent: "space-between",
             alignItems: "center",
           }}
         >
           <Grid item>
             <Link to="/">
-              <Typography variant="h4" component="p" color="white">
+              <Typography variant="h4" component="p" color="white" fontWeight="500">
                 MovieApp
               </Typography>
             </Link>
